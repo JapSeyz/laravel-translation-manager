@@ -325,6 +325,17 @@ class Manager{
             return $this->config[$key];
         }
     }
+    
+    protected function jsonSet(&$array, $key, $value)
+    {
+        if (\is_null($key)) {
+            return $array = $value;
+        }
+
+        $array[$key] = $value;
+
+        return $array;
+    }
 
     protected function getIgnoredLocales()
     {
